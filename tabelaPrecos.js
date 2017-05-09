@@ -3,9 +3,9 @@ var calculaTotalItem = function(){
 };
 
   { tabelaProdutos: [
-    {id: 1, nome: 'Banana', valorUnitario: 2},
-    {id: 2, nome: 'Maça', valorUnitario: 4.5}
+    {id: 1, nome: 'Banana', valorUnitario: 10},
+    {id: 2, nome: 'Maça', valorUnitario: 15}
     {id: 3, nome: 'Melão', valorUnitario: 6},
-    {id: 4, nome: 'Batata', valorUnitario: 2.5},
-    {id: 5, nome: 'Figo', valorUnitario: 1.5},
+    {id: 4, nome: 'Batata', valorUnitario: 7},
+    {id: 5, nome: 'Figo', valorUnitario: 9},
 ]}
