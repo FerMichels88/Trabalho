@@ -1,20 +1,23 @@
+const listaProdutos = [
+     {id: 1, nome: 'Maçã', valorUnitário: 10},
+     {id: 2, nome: 'Banana', valorUnitário: 4},
+     {id: 3, nome: 'Açai', valorUnitário: 6},
+     {id: 4, nome: 'Café', valorUnitário: 50}
+];
 
-const calculaTotalItem = function(codigo, quantidade) {
-  const produtos = [
-   {id: 1, nome: 'Banana', valorUnitario: 2},
-   {id: 2, nome: 'Maça', valorUnitario: 5},
-   {id: 3, nome: 'Pera', valorUnitario: 6},
-   {id: 4, nome: 'Morango', valorUnitario: 1},
-  ];
-var produtoEncontrado;
+const calculaTotalItem = function(codigo, quantidade, desconto) {
+  let produtoEncontrado;
 
-  for(var i = 0; i <= produtos.length-1; i++){
-    if (produtos[i].id == codigo) {
-      var produtoEncontrado= produtos[i];
+  for(var i = 0; i <= listaProdutos.length-1; i++){
+    if (listaProdutos[i].id == codigo) {
+      produtoEncontrado = listaProdutos[i];
     }
   }
-
-  return {produto: produtoEncontrado.nome, valor: produtoEncontrado.valorUnitario * quantidade };
-
+  const nomeProduto = produtoEncontrado.nome;
+  const total = produtoEncontrado.valorUnitário * quantidade;
+  const totalComDesconto = total - (desconto||0);
+  console.log({ produto: nomeProduto, valor: totalComDesconto });
+  return { produto: nomeProduto, valor: totalComDesconto}
 }
-module.exports = { calculaTotalItem };
+
+module.exports = { calculaTotalItem }
